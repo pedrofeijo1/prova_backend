@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Resources\CovenantCollection;
+use App\Http\Resources\InstitutionCollection;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        InstitutionCollection::withoutWrapping();
+        CovenantCollection::withoutWrapping();
     }
 }
